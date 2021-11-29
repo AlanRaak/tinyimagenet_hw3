@@ -6,10 +6,10 @@ from torch.autograd import Variable
 from efficientnet_pytorch import EfficientNet
 from PIL import Image
 
-
+### FILL THOSE
 path_to_project_folder = "C:/Users/user/Desktop/Loengud/Neural_Networks/HW3/tinyimagenet_hw3"
 your_model_name = "best_model_10_val_accuracy=0.5567.pt"
-
+### FILL THOSE
 
 states_dict = torch.load(f"{path_to_project_folder}/trained_models/{your_model_name}", map_location=torch.device('cpu'))
 
@@ -61,7 +61,7 @@ with torch.no_grad():
         enter_file_name = f"{input()}.JPEG"
         # Show result
         try:
-            raw_image = Image.open(f"{path_to_project_folder}/{enter_file_name}")
+            raw_image = Image.open(f"{path_to_project_folder}/test_images/{enter_file_name}")
             image = image_loader(raw_image)
             acthual = words_[validation_[enter_file_name]]
 
